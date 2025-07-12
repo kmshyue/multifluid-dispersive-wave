@@ -26,7 +26,7 @@ c
       zfa0  = q(6)
       zfb0  = 1.0d0-q(6)     
 c
-c     # phase1: ideal gas EOS
+c     # phase 1: ideal gas EOS
       ph1   = 0.d0
       eh1   = 0.d0              
       grue1 = geos(1)-1.d0

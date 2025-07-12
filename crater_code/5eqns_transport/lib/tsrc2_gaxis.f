@@ -34,8 +34,8 @@ c
             gaxis  = -dble(ndim-1)/aux(i,j,1)
             psi(1) = dt*gaxis*qloc(1)*vx0
             psi(2) = dt*gaxis*qloc(2)*vx0
-            psi(3) = dt*gaxis*(qloc(1)+qloc(2))*vx0**2
-            psi(4) = dt*gaxis*(qloc(1)+qloc(2))*vx0*vy0
+            psi(3) = dt*gaxis*qloc(3)*vx0
+            psi(4) = dt*gaxis*qloc(4)*vx0
             psi(5) = dt*gaxis*rhoh0*vx0
             psi(6) = 0.d0
 c

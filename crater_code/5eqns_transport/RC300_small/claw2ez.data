@@ -1,9 +1,9 @@
 250                mx          = cells in x direction
 500                my          = cells in y direction
  
-10                 nout
+10                  nout
 1                  outstyle
-60.0          
+60.0      
  
 0.001d0            dtv(1)      = initial dt (used in all steps if method(1)=0)
 1.0d99             dtv(2)      = max allowable dt

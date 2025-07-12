@@ -16,8 +16,11 @@ status = fclose(fid);
 data1 = data1';
 %
 km = 1e3;
-plot(data1(:,1)/km,data1(:,3)-4000,'bx-',...
+h0 = 4*km;
+plot(data1(:,1)/km,data1(:,3)-h0,'b-',...
      'LineWidth',1)
+%
+[min(min(data1(:,3)-h0)) max(max(data1(:,3)-h0))]
 %
 title(['surface displacement ($RC=300$m)'],...
        'fontsize',20,'interpreter','latex')
@@ -28,7 +31,7 @@ legend(['$t=$', num2str(t1),'s'],...
        'Box','off')
 %
 %ylim([-1200 200])
-xlim([0 1/2])
+%xlim([0 1/2])
 %
 xlabel('radial distance (km)','fontsize',20,'interpreter','latex')
 ylabel('m','fontsize',20,'interpreter','latex')

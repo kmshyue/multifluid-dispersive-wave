@@ -189,7 +189,7 @@ c
 c
 c     # main loop
       tend = t0
-      n0   = iframe*nstepout + 1
+      n0   = iframe*nstepout+1
       do 100 n=n0,nout
          tstart = tend
          if (outstyle .eq. 1) tend = tstart+dtout

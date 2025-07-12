@@ -31,8 +31,6 @@ c
 c     # constants for RK time stepping
       c2 = 1.d0
 c
-c      write(66,*) 'stage 1'
-c
 c     # stage 1
 c     # before step2
       call b4step2(maxmx,maxmy,mbc,mx,my,meqn,maux,
@@ -73,8 +71,6 @@ c     # before step2
      &     xlower,ylower,dx,dy,that,dt,
      &     q,qold,aux,auxold,
      &     work,mwork,mthlim,mwaves,mthbc,cflv2)
-c
-c      write(66,*) 'stage 2'
 c
 c     # store (dt)*L(q^1) = (dt)*d/dt(q^(1)(t^(1)) in qrk1
       call step2(maxm,maxmx,maxmy,meqn,mwaves,mbc,maux,

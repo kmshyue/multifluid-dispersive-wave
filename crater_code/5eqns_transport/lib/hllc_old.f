@@ -40,13 +40,13 @@ c
       flux1(1) = ql_state(1)*u1
       flux1(2) = ql_state(2)*u1
       flux1(3) = ql_state(3)*u1+p1
-      flux1(4) = ql_state(4)*u1
+      flux1(4) = ql_state(4)*v1
       flux1(5) = (ql_state(5)+p1)*u1
 c
       flux2(1) = qr_state(1)*u2
       flux2(2) = qr_state(2)*u2
       flux2(3) = qr_state(3)*u2+p2
-      flux2(4) = qr_state(4)*u2
+      flux2(4) = qr_state(4)*v2
       flux2(5) = (qr_state(5)+p2)*u2
 c
 c     # compute qhll state     
@@ -66,8 +66,7 @@ c     # set middle state (left)
       qml(1) = work(1)/(s_local(1)-s_local(2))
       qml(2) = work(2)/(s_local(1)-s_local(2))
       qml(3) = (qml(1)+qml(2))*s_local(2)
-      qml(4) = work(4)/(s_local(1)-s_local(2))
-c      qml(4) = (qml(1)+qml(2))*v1
+      qml(4) = (qml(1)+qml(2))*v1
       pm1    = s_local(2)*(work(1)+work(2))-work(3)
       qml(5) = (work(5)+s_local(2)*pm1)/(s_local(1)-s_local(2))
       qml(6) = ql_state(6)
@@ -79,8 +78,7 @@ c     # set middle state (right)
       qmr(1) = work(1)/(s_local(3)-s_local(2))
       qmr(2) = work(2)/(s_local(3)-s_local(2))
       qmr(3) = (qmr(1)+qmr(2))*s_local(2)
-c      qmr(4) = (qmr(1)+qmr(2))*v2
-      qmr(4) = work(4)/(s_local(3)-s_local(2))
+      qmr(4) = (qmr(1)+qmr(2))*v2
       pm2    = s_local(2)*(work(1)+work(2))-work(3)
       qmr(5) = (work(5)+s_local(2)*pm2)/(s_local(3)-s_local(2))
       qmr(6) = qr_state(6)

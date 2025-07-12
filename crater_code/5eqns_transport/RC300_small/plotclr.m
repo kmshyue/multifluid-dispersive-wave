@@ -1,4 +1,5 @@
 function plotclr(m,j)
+format long
 %
 % read time and number of grids:
 n1 = j+10000;
@@ -49,8 +50,12 @@ if m==1
         reshape(data(:,2),mx,my);    
 elseif m==2
    q1 = reshape(data(:,3),mx,my);  
+
+   vof1 = reshape(data(:,6),mx,my);  
 elseif m==3
    q1 = reshape(data(:,4),mx,my);  
+
+   vof1 = reshape(data(:,6),mx,my);  
 elseif m==4
    q1 = reshape(data(:,5),mx,my);  
 %
@@ -61,17 +66,15 @@ end
 %
 status = fclose(fid);
 %
+qmin = min(min(q1));
+qmax = max(max(q1));
+[qmin qmax]
+%
 % for pseudo color plots
 %
 clf
 %
 pcolor(x',y',q1');
-%
-%hold on
-%pcolor(x',(y-0.5*dy)',q1');
-%hold on
-%pcolor(x',(-y2+0.5*dy)',q2');
-%hold off
 %
 %yrbcolormap
 colormap('jet')
@@ -84,12 +87,6 @@ colorbar('TickLabelInterpreter','latex',...
 %t1 = t1*1e3;
 framest = [num2str(j)];
 if m ==1
-   hold on
-%   vline = [0.5 0.5];
-%   contour((x+0.5*dx)',y',vof1',vline,...
-%           'LineColor','w');
-%   contour((-x2-0.5*dx)',y',vof2',vline,...
-%           'LineColor','w');
    title(['density at t=', num2str(t1),'s'],...
       'fontsize',20,'interpreter','latex')
 %
@@ -109,14 +106,10 @@ elseif m == 3
 %
    fname = ['crater_5eqns_transport_v' framest];
 elseif m == 4
-   colormap('jet')
    hold on
-   vline = [101325.0 101325.0]
-   contour(x',y',q1',vline,...
+   vline = [0.5 0.5]
+   contour(x',y',vof1',vline,...
            'LineColor','w');
-%   pmin = min(min(q1))
-%   pmax = max(max(q1))
-%   caxis([1e5 5e8])
 
    title(['pressure at t=', num2str(t1),'s'],...
       'fontsize',20,'interpreter','latex')

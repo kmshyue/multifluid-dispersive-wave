@@ -93,7 +93,7 @@ c
       go to 90
 c
  20   continue
-c     # hybrid THINC & other reconstruction
+c     # hybrid THINC reconstruction
 c
 c     # reconstruction scheme (basis)
       call q2qlqr_interp(ixy,maxm,meqn,mwaves,mbc,maux,mx,
@@ -123,7 +123,7 @@ c     # compute maximum wave speed for checking Courant number:
          do i=1,mx+1
 c           # if s>0 use dtdx1d(i) to compute CFL,
 c           # if s<0 use dtdx1d(i-1) to compute CFL:
-            cfl1d = dmax1(cfl1d, dtdx1d(i)*s(i,mw), 
+            cfl1d = dmax1(cfl1d,dtdx1d(i)*s(i,mw), 
      &                          -dtdx1d(i-1)*s(i,mw))
             enddo
          enddo 
