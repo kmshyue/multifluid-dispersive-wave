@@ -1,0 +1,22 @@
+Run the code:
+(i) make clear
+(ii) make
+(iii) ./xclaw
+
+Graphic:
+(i) ploteta_airy(j,tj) 
+    data: 1D depth average plot for the jth output 
+          Airy solution at time tj
+    For example, ploteta_airy(5,30) 
+
+(ii) ploteta_airy_3meth(j,tj)
+     data: the jth output from 1D muscl, weno3, and weno5
+           Airy solution at time tj
+    For example, ploteta_airy_3meth(5,30) 
+
+(iii) plotslice5(m,N,r)
+     data: the first N outputs
+
+    For example, plotslice5(5,5,500); the N= 5 cross-sectional plot 
+    for the water volume fraction (m=5) at the radial distance r
+    
