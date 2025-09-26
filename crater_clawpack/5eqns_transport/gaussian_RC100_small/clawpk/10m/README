@@ -1,0 +1,11 @@
+Run the code:
+(i) make clear
+(ii) make
+(iii) ./xclaw
+
+Graphic:
+(i) ploteta_airy(j,tj) 
+    data: 1D depth average plot for the jth output 
+          Airy solution at time tj
+    For example, ploteta_airy(5,30) 
+
